@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration>
+    <springProfile name="!local">
+
+        <springProperty name="console.pattern" source="logging.pattern.console"
+                        defaultValue="%highlight(%-5level)   %boldCyan(%date{dd MMM yyyy - HH:mm:ss.SSS})   %boldYellow(%-33.33(%logger{0} - %L))   %boldRed(%ex{full})   %boldMagenta(%m%n)" />
+
+        <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+            <encoder>
+                <pattern>${console.pattern}</pattern>
+            </encoder>
+        </appender>
+
+        <root level="INFO">
+            <appender-ref ref="CONSOLE"/>
+        </root>
+    </springProfile>
+</Configuration>

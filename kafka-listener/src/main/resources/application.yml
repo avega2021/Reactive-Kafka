@@ -1,0 +1,14 @@
+spring:
+    application:
+        name: Kafka Listener
+
+    kafka:
+        bootstrap-servers: localhost:9092
+        topics:
+            notify: notification-topic
+        consumer:
+            group-id: notification-group
+
+notification:
+    service:
+        url: http://localhost:8081/api
